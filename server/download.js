@@ -13,4 +13,11 @@ export const download = (videoId)=> {
       throw new Error("A duração desse vídeo é maior do que 60 segundos.")
     }
   })
+  .on("end", ()=> {
+    console.log("Download do vídeo finalizado.")
+  })
+  .on("error", (error)=> {
+    console.log("Não foi possível fazer o download do vídeo. Detalhes do erro:", error)
+  })
+  .pipe(fs.createWriteStream("./tmp/audio.mp4"))
 }
