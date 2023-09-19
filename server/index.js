@@ -9,9 +9,9 @@ app.use(cors());
 
 app.get("/summary/:id", (request, response)=> {
   download(request.params.id);
-  transcribe()
+  const result = transcribe();
 
-  response.json({result: "Download do vídeo realizado com sucesso!"})
+  response.json({ result });
 })
 
 app.listen(3333, ()=> console.log("Server is running on port 3333"));
