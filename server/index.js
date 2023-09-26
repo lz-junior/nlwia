@@ -14,7 +14,7 @@ app.get("/summary/:id", async (request, response)=> {
   await download(request.params.id);
   const audioConverted = await convert();
   console.log(audioConverted);
-  const result = await transcribe();
+  const result = await transcribe(audioConverted)
 
   return response.json({ result });
 })
