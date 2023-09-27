@@ -30,7 +30,7 @@ export const convert = ()=>
   })
   .on("error", (error)=> {
     console.log("Erro ao converter o vídeo", error)
-    rejects(error)
+    reject(error)
   })
   .save(outputPath)
 })
