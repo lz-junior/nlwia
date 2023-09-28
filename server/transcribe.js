@@ -1,14 +1,15 @@
-import { pipeline } from "@xenova/transformers";
+import { pipeline } from "@xenova/transformers"
 
-import { transcriptionExample } from './utils/transcription.js';
+import { transcriptionExample } from "./utils/transcription.js"
 
 export async function transcribe(audio) {
   try {
-    // return transcriptionExample;
-    console.log("Realizando a transcrição...")
-    
+    // return transcriptionExample
+
+    console.log("Realizando a transicrição...")
+
     const transcribe = await pipeline(
-      "automatic-speech-recognition", 
+      "automatic-speech-recognition",
       "Xenova/whisper-small"
     )
 
@@ -17,8 +18,9 @@ export async function transcribe(audio) {
       stride_length_s: 5,
       language: "portuguese",
       task: "transcribe",
-    });
-    console.log("Transcrição finalizada com sucesso!")
+    })
+
+    console.log("Transcrição finalizada com sucesso.")
     return transcription?.text.replace("[Música]", "")
   } catch (error) {
     throw new Error(error)

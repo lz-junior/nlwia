@@ -1,13 +1,13 @@
-
-# logs
+# Logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lernar-debug.log*
+lerna-debug.log*
 
-node_modeules
+node_modules
 dist
 dist-ssr
 *.local
