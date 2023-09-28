@@ -23,7 +23,7 @@ export const convert = ()=>
     const audioData = fileDecoded.channelData[0]
     const floatArray = new Float32Array(audioData)
 
-    console.log("Vídeio convertido com sucesso")
+    console.log("Vídeo convertido com sucesso")
 
     resolve(floatArray)
     fs.unlinkSync(outputPath)
